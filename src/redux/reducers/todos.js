@@ -1,8 +1,7 @@
-
-
 const iState = {
   inputText: '',
-  jobDetails : {}
+  jobDetails : {},
+  jobShowCount:8
 };
 
 const inputs = (state = iState, action) => {
@@ -11,6 +10,8 @@ const inputs = (state = iState, action) => {
       return  {  ...state, inputText : action.payload }
     case 'SET_JOBS':
       return  {  ...state, jobDetails : action.payload.jobs }
+      // case 'JOB_SHOW_COUNT' :
+      //   return { ...state, jobShowCount:  state.jobShowCount + action.payload }
     default:
       return state
   }
