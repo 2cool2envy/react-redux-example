@@ -2,33 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './jobs.scss';
 
-// let filterResult = (input, jobs) => {
-//   let tempArr = jobs.filter((val) => {
-//     input = input.toLowerCase();
-//     let desc = (val['Job Description']).toLowerCase();
-//     let title = (val['Business Title']).toLowerCase();
-//     console.log("desc ", desc, input, title)
-//     return (desc.includes(input)) || (title.includes(input))
-//   });
-//   return tempArr;
-// }
-
-// export default function JobView() {
-//   let finalData = [];
-//   const inputData = useSelector(state => state)
-//   let jobsData = inputData.inputs.jobDetails;
-//   if (inputData.inputs.inputText.length > 0) {
-//     finalData = filterResult(inputData.inputs.inputText, jobsData);
-//   }
-//   else {
-//     finalData = jobsData;
-//   }
-//   return (
-
-
-
-//   )
-// }
 
 class JobView extends React.Component {
   constructor(props) {
@@ -43,7 +16,6 @@ filterResult = (input, jobs) => {
     input = input.toLowerCase();
     let desc = (val['Job Description']).toLowerCase();
     let title = (val['Business Title']).toLowerCase();
-    console.log("desc ", desc, input, title)
     return (desc.includes(input)) || (title.includes(input))
   });
   return tempArr;
@@ -56,7 +28,6 @@ filterResult = (input, jobs) => {
           let input = props.inputData.toLowerCase();
           let desc = (val['Job Description']).toLowerCase();
           let title = (val['Business Title']).toLowerCase();
-          console.log("desc ", desc, input, title)
           return (desc.includes(input)) || (title.includes(input))
         }) 
         : [],
@@ -69,7 +40,9 @@ filterResult = (input, jobs) => {
     return (
       <>
         <div className="offset-lg-5 offset-md-5 col-lg-7 col-md-7">
-          <h3>Total Jobs : {this.state.jobData.length}</h3>
+          <h3>Total Jobs : {this.state.jobData.length}
+         
+          </h3>
         </div>
         <div className="row">
           {
@@ -81,7 +54,9 @@ filterResult = (input, jobs) => {
               return (
                 <div key={i} className="col-lg-3 col-md-3">
                   <div key={i} className="card-body">
-                    <h5 className="card-title">{val['Business Title']}</h5>
+                    <h5 className="card-title">{val['Business Title']}
+                    {/* <span className="favIcon"><i className="fa fa-heart" aria-hidden="true"></i></span> */}
+                    </h5>
                     <h6 className="card-subtitle mb-2 text-muted">
                       Job ID {val['Job ID']} | Division/Work Unit :{val['Division/Work Unit']}
                     </h6>
@@ -92,10 +67,10 @@ filterResult = (input, jobs) => {
                       Job Description : {jobDesc}</p>
                     <div className="card-buttons">
                       <button className="btn btn-dark" type="button">See Details 
-                      <i class="fa fa-list" aria-hidden="true"></i>
+                      <i className="fa fa-list" aria-hidden="true"></i>
                       </button>
                       <button className="btn btn-dark" type="button">Apply Now 
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                       </button>
                     </div>
                   </div>

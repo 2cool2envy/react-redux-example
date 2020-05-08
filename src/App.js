@@ -45,7 +45,11 @@ class App extends React.Component {
           </div>
         </Suspense>
 
-
+        <div onClick={() => {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }} class="fabButton animated zoomIn" id="masterfab"><span>
+            <i className="fa fa-arrow-up" aria-hidden="true"></i> </span></div>
         {/* end of main div */}
 
       </>

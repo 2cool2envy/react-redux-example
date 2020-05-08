@@ -31,7 +31,7 @@ class SearchForm extends React.Component {
             }}
               className="btn btn-dark" type="button"> 
               Reset  
-               <i class=" fa fa-reply" aria-hidden="true"></i> 
+               <i className=" fa fa-reply" aria-hidden="true"></i> 
                   
               </button>
           </div>
